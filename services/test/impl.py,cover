@@ -1,0 +1,20 @@
+> from codeits.log.UtilLog import UtilLog
+  
+> from codeits.exceptions.ExceptionApi import ExceptionApi
+> class ApiService:
+  
+>     @staticmethod
+>     def echo(str_in):
+>         if str_in == 'raise':
+!             raise ExceptionApi(400,"echo 'raise' not implemented")
+>         return str_in
+      
+>     @staticmethod
+>     def level_logs(msg):
+>         UtilLog.critical(msg)
+>         UtilLog.error(msg)
+>         UtilLog.warning(msg)
+>         UtilLog.info(msg)
+>         UtilLog.debug(msg)
+          
+>         return 'OK'

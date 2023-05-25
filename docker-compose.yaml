@@ -1,0 +1,34 @@
+version: '3.5' 
+networks:
+  base_net:
+    name: base_net
+    ipam:
+      config:
+        - subnet: 172.20.7.0/24
+services:
+  ms-base-ext:
+    image: ms-base-ext:0.0.1
+    container_name: ms-base-ext
+    restart: always
+    build:
+      context: .
+      dockerfile: dockerfile
+    env_file: .env
+    volumes:
+      - ./alembic:/api-run/alembic
+      - ./apis:/api-run/apis
+      - ./db:/api-run/db
+      - ./services:/api-run/services
+      - ./htmlcov:/api-run/htmlcov
+      - type: bind
+        source: ../ms-base-api/sh/run_tests.sh
+        target: /api-run/sh/run_tests.sh
+      # - type: bind
+      #   source: ../ms-base-api/sh/start_server.sh
+      #   target: /api-run/sh/start_server.sh
+    ports:
+      - "8080:8000"
+      - 5678:5678 # for debug
+    networks:
+      base_net:
+        ipv4_address: 172.20.7.3

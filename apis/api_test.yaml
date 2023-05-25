@@ -1,0 +1,93 @@
+openapi: "3.0.0"
+info:
+  title: Service Base Api
+  version: "1.0.0"
+  description: This service base allow you to build easily a rest api with swagger documentation
+  contact:
+    name: Adan Escobar
+    email: aescobar@codeits.cl
+    url: https://www.linkedin.com/in/aescobar-ing-civil-computacion/
+servers:
+  - url: /test/api/v1
+
+# Paths supported by the server application
+paths:
+  /echo/{str_in}:
+    get:
+      # security:
+      #   - bearerAuth: []         # use the same name as above
+      operationId: "services.test.facade.ApiFacade.echo"
+      tags:
+      - "TEST"
+      summary: "echo test"
+      description: "echo test"
+      parameters:
+        - name: str_in
+          in: path
+          description: any text
+          required: true
+          schema:
+            type: string
+
+      responses:
+        200:
+          description: "Receive Data Ok"
+        400:
+          description: "Error Format Data"
+        500:
+          description: "Internal server error"
+  /level_logs/{msg}:
+    get:
+      # security:
+      #   - bearerAuth: []         # use the same name as above
+      operationId: "services.test.facade.ApiFacade.level_logs"
+      tags:
+      - "TEST"
+      summary: "level_logs"
+      description: "print message according level logs"
+      parameters:
+        - name: msg
+          in: path
+          description: any text
+          required: true
+          schema:
+            type: string
+
+      responses:
+        200:
+          description: "Print Ok"
+        400:
+          description: "Error Format Data"
+        500:
+          description: "Internal server error"
+
+  /stream:
+    get:
+      operationId: "services.test.facade.ApiFacade.stream_data"
+      tags:
+      - "stream"
+      summary: "stream data"
+      description: "getting data stream on server"
+      responses:
+        200:
+          description: "successful operation"
+          content:
+            text/event-stream:
+              schema:
+                type: "string"
+        404:
+          description: "Order not found"
+        500:
+          description: "Server internal error"
+  
+# 1) Define the security scheme type (HTTP bearer)
+components:
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT    # optional, arbitrary value for documentation purposes
+      x-bearerInfoFunc: codeits.server.ServerApi.ServerApi.fake_decode
+# 2) Apply the security globally to all operations
+# security:
+#   - bearerAuth: []         # use the same name as above
