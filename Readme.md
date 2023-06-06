@@ -29,6 +29,12 @@ http://localhost:8080/test/api/v1/ui/
 
 ```
 
+# Try graphql
+
+```
+http://localhost:8080/graphql
+
+```
 # vscode launch.json debug sample
 
 ```json
