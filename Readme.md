@@ -15,14 +15,14 @@ It will allow you to focus on developing business logic rather than technical as
  - Unit Test
  - Test Coverage
 
-#How to run
+# How to run
 
 ```bash
 cd ms-base-ext
 docker-compose up --build
 ```
 
-#try swagger-ui
+# Try swagger-ui
 
 ```
 http://localhost:8080/test/api/v1/ui/
