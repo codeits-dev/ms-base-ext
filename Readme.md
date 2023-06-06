@@ -16,31 +16,31 @@ It will allow you to focus on developing business logic rather than technical as
  - Unit Test
  - Test Coverage
 
-## How to run
 --------------------------------------------
+## How to run
 
 ```bash
 cd ms-base-ext
 docker-compose up --build
 ```
 
-## Try swagger-ui
 --------------------------------------------
+## Try swagger-ui
 
 ```
 http://localhost:8080/test/api/v1/ui/
 
 ```
 
-## Try graphql
 --------------------------------------------
+## Try graphql
 
 ```
 http://localhost:8080/graphql
 
 ```
-## vscode launch.json debug sample
 --------------------------------------------
+## vscode launch.json debug sample
 
 ```json
 {
