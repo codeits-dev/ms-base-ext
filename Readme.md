@@ -1,9 +1,10 @@
 # Base Api Project for Micro Services
+--------------------------------------------
 
 This is a  Flask-based service that significantly enhances the speed of development, thanks to its many built-in functionalities.
 It will allow you to focus on developing business logic rather than technical aspects, enabling you to build applications more efficiently.
 
-# Included functionalities.
+## Included functionalities.
  - Api Swagger (open api 3.0)
  - GraphQl
  - Sql Alchemy with Alembic
@@ -15,27 +16,31 @@ It will allow you to focus on developing business logic rather than technical as
  - Unit Test
  - Test Coverage
 
-# How to run
+## How to run
+--------------------------------------------
 
 ```bash
 cd ms-base-ext
 docker-compose up --build
 ```
 
-# Try swagger-ui
+## Try swagger-ui
+--------------------------------------------
 
 ```
 http://localhost:8080/test/api/v1/ui/
 
 ```
 
-# Try graphql
+## Try graphql
+--------------------------------------------
 
 ```
 http://localhost:8080/graphql
 
 ```
-# vscode launch.json debug sample
+## vscode launch.json debug sample
+--------------------------------------------
 
 ```json
 {
