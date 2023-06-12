@@ -1,4 +1,4 @@
-FROM codeits/ms-base-api:0.0.5
+FROM codeits/ms-base-api:0.0.6
 
 ARG GIT_HOST=bitbucket.org
 ARG GIT_WORKSPACE=code-business
